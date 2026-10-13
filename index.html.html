@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Early Signs – Women's Cancer Symptom & Screening Companion</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <h1>Early Signs</h1>
+  <p>Track symptoms, spot patterns worth a doctor's visit, and stay on schedule with screenings.</p>
+</header>
+
+<p class="notice" role="note">This app supports awareness only. It cannot diagnose or treat cancer. If a symptom worries you, contact a doctor. For severe symptoms, call your local emergency number.</p>
+
+<main>
+  <section aria-labelledby="log-h">
+    <h2 id="log-h">Log symptoms</h2>
+    <form id="logForm">
+      <label>Date <input type="date" id="date" required></label>
+      <fieldset>
+        <legend>What are you noticing?</legend>
+        <div id="symptomList" class="chips"></div>
+      </fieldset>
+      <label>How long has it lasted?
+        <select id="duration">
+          <option value="1">Less than 2 weeks</option>
+          <option value="2">2 weeks or more</option>
+        </select>
+      </label>
+      <label>Notes (optional) <textarea id="notes" rows="2"></textarea></label>
+      <button type="submit">Save entry</button>
+    </form>
+  </section>
+
+  <section aria-labelledby="flag-h">
+    <h2 id="flag-h">What your log suggests</h2>
+    <div id="flags" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="scr-h">
+    <h2 id="scr-h">Screening guide</h2>
+    <form id="screenForm" class="inline">
+      <label>Age <input type="number" id="age" min="18" max="100" required></label>
+      <label class="check"><input type="checkbox" id="smoker"> Smoked heavily (20+ pack-years)</label>
+      <label class="check"><input type="checkbox" id="family"> Close relative with breast or ovarian cancer</label>
+      <button type="submit">Show my guide</button>
+    </form>
+    <ul id="screenOut" class="plain"></ul>
+  </section>
+
+  <section aria-labelledby="self-h">
+    <h2 id="self-h">Monthly self-check</h2>
+    <details><summary>Breast</summary><p>Look in a mirror, then feel each breast and underarm using flat fingers in small circles. Note lumps, dimpling, nipple changes or discharge.</p></details>
+    <details><summary>Skin</summary><p>Check moles for asymmetry, uneven borders, multiple colours, size over 6 mm, or any change over time.</p></details>
+    <details><summary>Body</summary><p>Notice bloating that does not settle, unexplained weight loss, ongoing fatigue, or bleeding outside your usual cycle.</p></details>
+  </section>
+
+  <section aria-labelledby="hist-h">
+    <h2 id="hist-h">History</h2>
+    <div class="actions">
+      <button type="button" id="exportBtn">Download log for my doctor</button>
+      <button type="button" id="clearBtn" class="ghost">Delete all entries</button>
+    </div>
+    <ul id="history" class="plain"></ul>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
